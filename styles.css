@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.actions-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 130px;
+}
+
+.actions-panel input[type="number"] {
+    width: 45px;
+    height: 28px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 34px;
+    border: 1px solid black;
+}
+
+.actions-panel input[type="number"]:focus-visible {
+    outline: none;
+    border: 2px solid #1a5dff;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #1a5dff;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #1a5dff;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(15px);
+    -ms-transform: translateX(15px);
+    transform: translateX(15px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.actions-panel {
+    display: grid;
+    grid-template-columns: 1fr 80px;
+    grid-template-rows: 1fr 1fr 1fr;
+    align-items: center;
+}
+
+.actions-panel p {
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    margin: 15px 15px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+}
+
+
+@keyframes container {
+    from {
+        transform: rotate(0)
+    }
+    to {
+        transform: rotate(360deg)
+    }
+}
+
+.circular-progress {
+    position: relative;
+    height: 135px;
+    width: 135px;
+    border-radius: 50%;
+    background: conic-gradient(#1a5dff 0deg, #eef3f6 0deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 40px;
+}
+
+.circular-progress::before {
+    content: "";
+    position: absolute;
+    height: 115px;
+    width: 115px;
+    border-radius: 50%;
+    background: white;
+}
+
+.title {
+    font-family: Arial, sans-serif;
+    align-self: flex-start;
+}
+
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+.circular-progress.rotate {
+    animation: rotate 2s linear infinite;
+}
+
+
+@media screen and (orientation: portrait) {
+
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: white;
+    }
+
+    .progress-component-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        align-content: space-between;
+    }
+}
+
+
+@media screen and (orientation: landscape) {
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .progress-component-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Progress Component</title>
+</head>
+<body>
+<div class="progress-component-container">
+    <p class="title">Progress</p>
+    <div class="container">
+        <div class="circular-progress">
+            <span class="progress-value"></span>
+        </div>
+    </div>
+    <div class="container">
+        <div class="actions-panel">
+            <input type="number" class="value-input" id="value-input" min="0" max="100" value="">
+            <p>Value</p>
+            <label class="switch" for="animate-toggle">
+                <input type="checkbox" id="animate-toggle">
+                <span class="slider round"></span>
+            </label>
+            <p>Animate</p>
+            <label class="switch" for="hide-toggle">
+                <input type="checkbox" id="hide-toggle">
+                <span class="slider round"></span>
+            </label>
+            <p>Hide</p>
+        </div>
+    </div>
+</div>
+<script src="progressBar.js"></script>
+</body>
+</html>
+
